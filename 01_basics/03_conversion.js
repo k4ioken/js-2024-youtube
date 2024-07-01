@@ -8,3 +8,8 @@ console.log(typeof numbertest); //returns type number
 console.log(numbertest); //returns NaN
  //printing this will return NaN (not a number) as the string characters cant be converted to number
 
+// ******************OPERATIONS**************
+
+let str1="Hello"
+let str2=" Bye"
+console.log(str1 + str2); //str concatenation
