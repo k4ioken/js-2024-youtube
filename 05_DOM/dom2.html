@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM | Chai aur code</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <div class="parent">
+      <!-- this is a comment -->
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+    </div>
+  </body>
+  <script>
+    const parent = document.querySelectorAll(".parent");
+    const children = parent[0].children; //accessing all children from a parent (HTML Collection)
+    //    children.forEach((item)=>{
+    //     item.style.color="gold"
+    //    })     //forEach does not work in HTMLCollection
+    // console.log(parent[0].lastElementChild);
+    const day = document.querySelectorAll(".day");
+    // console.log(day[0].parentElement);    //accessing parent from child
+    // console.log(day[0].nextElementSibling);
+    // console.log(parent[0].childNodes);
+    function creatediv(text, color, id1) {
+      const myDiv = document.createElement("div");
+      myDiv.setAttribute("id", id1);
+      myDiv.style.backgroundColor = color;
+      const textnode = document.createTextNode(text);
+      myDiv.appendChild(textnode);
+      document.body.appendChild(myDiv);
+      myDiv.style.width = "150px";
+      myDiv.style.height = "120px";
+      myDiv.style.textAlign = "center";
+      myDiv.style.lineHeight = "120px";
+    }
+    creatediv("HELLO", "red", "123");
+    // const div1=document.getElementById("123")
+    // div1.innerHTML="BYE"
+    const div1 = document.querySelectorAll("div");
+    console.log(div1.lastElementChild);
+  </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai aur code | DOM</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    
+    function addlang(lang){
+        const myul=document.querySelector(".language")
+        const li1=document.createElement('li');
+        li1.textContent=lang
+        myul.appendChild(li1);  //inefficient for large number of operations as in each iteration append is used to traverse the end of unordered list.
+    }
+    function optimisedaddlang(lang){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(lang));
+        const myul=document.querySelector(".language");
+        myul.appendChild(li);
+    }
+    optimisedaddlang("Python")
+    optimisedaddlang("Golang")
+
+    //edit elements
+    const ul1=document.querySelector('ul')
+    console.log(ul1);
+    const licount=ul1.querySelectorAll('li').length;
+    // console.log(licount);
+    function editnth(index,newelement){
+        if(index>licount){
+            console.log("invalid index");
+            return;
+        }
+        const li=document.querySelector(`li:nth-child(${index})`);
+
+        const newli=document.createElement('li');
+        newli.appendChild(document.createTextNode(newelement))
+        li.replaceWith(newli)
+    }
+    console.log(editnth(2,"Rust"));
+    
+  </script>
+</html>
